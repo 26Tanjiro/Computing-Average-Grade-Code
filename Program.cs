@@ -1,57 +1,53 @@
 ﻿using System;
 
-namespace Project_g
+namespace Projectg
 {
-    internal class Program
+ class Program
     {
-      static void Main(string[] args)
+        static void Main(string[] args)
         {
-            
-            double addg, average;
-            int attempg;
-            
 
-            Console.WriteLine("Enter how many grade you want to compute:");
-            attempg = int.Parse(Console.ReadLine());
+            int addgrade;
+            int grade;
             double sum = 0;
+            double average;
 
+            Console.WriteLine("Enter many attemp grade:");
+            addgrade = Convert.ToInt32(Console.ReadLine());
 
-            while (attempg > 0)
+            for (int i = 0; i < addgrade; i++)
             {
-                Console.WriteLine("Enter you're grade:");
-                addg = double.Parse(Console.ReadLine());
-                sum += addg;
-                attempg--;
-
-                Console.WriteLine("The total grade:" + sum);
-                average = sum / attempg;
-                if (average <= 50)
-                {
-                    
-                    Console.WriteLine(average+ "Failed");
-                }
-                else if (average <= 70)
-                {
-                   
-                    Console.WriteLine(average+ "Fair");
-                }
-                else if (average <= 80)
-                {
-                   
-                    Console.WriteLine(average+ "Good");
-                }
-                else if (average <= 90)
-                {
-                    
-                    Console.WriteLine( average+ "Very Good");
-                }
-                else
-                {
-                    
-                    Console.WriteLine(average +"Excelent");
-
-                }
+                Console.Write("Enter the Grade:");
+                grade = Convert.ToInt32(Console.ReadLine());
+                sum = sum + grade;
             }
+            average = sum / addgrade;
+
+             if (average <= 50)
+            {
+                Console.WriteLine(average + " Failed");
+            }
+            else if (average <= 70)
+            {
+                Console.WriteLine(average + " Fair");
+            }
+            else if (average <= 80)
+            {
+                Console.WriteLine(average + " Good");
+            }
+            else if (average <= 90)
+            {
+                Console.WriteLine(average + " Very Good");
+            }
+            else
+            {
+                Console.WriteLine(average + " Excellent");
+            }
+
+            Console.WriteLine("Total Grade you input: " + sum);
+
         }
+        
     }
+
 }
